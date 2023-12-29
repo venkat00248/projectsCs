@@ -1,0 +1,817 @@
+tags:
+- name: workflow
+  description: Operations about workflow
+- name: tasks
+  description: Operations about tasks in workflow
+- name: actions
+  description: Operations about actions in tasks
+paths:
+  /workflow/unpublished/fetch-all:
+   get:
+     tags:
+     - workflow
+     summary: Fetch all workflows
+     responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/workflow'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: workflows fetching failed
+  
+  /workflow/unpublished/fetch-one/{id}:
+   get:
+     tags:
+     - workflow
+     summary: Fetch workflow by id
+     parameters:
+      - name: id
+        in: path
+        description: ID of wrkflow to return
+        required: true
+        schema:
+          type: string
+          example: "64ab9a0e8ea41dae921c59b9"
+     responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        $ref: '#/components/schemas/workflow'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: workflow fetching failed
+  
+  /workflow/unpublished/create:
+    post:
+      tags:
+        - workflow
+      summary: Create a workflow
+      requestBody:
+        description: Workflow object that needs to be created
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                created_by:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                name:
+                  type: string
+                  example: "test workflow"
+                  required: ["true"]
+                description:
+                  type: string
+                  example: "test workflow"
+                priority:
+                  type: string
+                  example: "p1"
+                  required: ["true"]
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        $ref: '#/components/schemas/workflow'
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: workflow Creation Failed
+                    
+  /workflow/unpublished/edit:
+    post:
+      tags:
+        - workflow
+      summary: Edit a workflow
+      requestBody:
+        description: Workflow entity that needs to be edited,Provide any workflow field that needs to be edited, check the workflow object in schema
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workFlowId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                editPayload:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: "editing name"
+                    
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        $ref: '#/components/schemas/workflow'
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: workflow Editing Failed
+                    
+  /workflow/unpublished/save:
+    post:
+      tags:
+        - workflow
+      summary: Save a workflow
+      requestBody:
+        description: This saves React Flow workflow payload in from of JSON 
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workFlowId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                workFlowJson:
+                  type: string
+                  example: ""
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        type: object
+                        properties: 
+                          _id:
+                            type: string
+                            example: "64ab9a0e8ea41dae921c59b9"
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: workflow Saving Failed
+  /workflow/published/map-workflow:
+    post:
+      tags:
+        - workflow
+      summary: Trace a workflow
+      requestBody:
+        description: This is called after publishing workflow to trace workflow and call necessary actions and validations when state change happens
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workFlowId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                ticketId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                transitionNodes:
+                  type: object
+                  properties:
+                    source:
+                     type: string
+                     example: "64ab9a0e8ea41dae921c59b9"
+                    target:
+                     type: string
+                     example: "64ab9a0e8ea41dae921c59b9"
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        type: string
+                        example: "transition successfull"
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: "state transition failed"
+  
+/workflow/published/create-state:
+    post:
+      tags:
+        - workflow
+      summary: Set a workflow state
+      requestBody:
+        description: This sets initial workflow state when a ticket is created
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workFlowId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                ticketId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        type: string
+                        example: "Workflow State created"
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: "Workflow state creation failed"
+/nodes/unpublished/add-task:
+    post:
+      tags:
+        - tasks
+      summary: Add task to a workflow
+      requestBody:
+        description: This Adds a task to workfow
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workFlowId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                taskData:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: "1"
+                    name:
+                      type: string
+                      example: "task1"
+                    actions:
+                      type: array
+                      items:
+                         {}
+                    validations:
+                      type: array
+                      items:
+                         {}
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        $ref: '#/components/schemas/tasks'
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: "Adding task to workflow failed"
+/nodes/unpublished/delete-task:
+    post:
+      tags:
+        - tasks
+      summary: delete task
+      requestBody:
+        description: This deleted a task from workfow
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workFlowId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                taskId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        $ref: '#/components/schemas/tasks'
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: "deleting task from workflow failed"
+  
+/nodes/unpublished/update-task:
+    post:
+      tags:
+        - tasks
+      summary: update task
+      requestBody:
+        description: This updates the task, provide fields as mentioned in the task schema
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workFlowId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                taskId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                taskData:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: "new name"
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        $ref: '#/components/schemas/tasks'
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: "updating task failed"
+/actions/unpublished/create:
+    post:
+      tags:
+        - actions
+      summary: create action
+      requestBody:
+        description: This Adds an action to a task
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workFlowId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                taskId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                actionData:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: "email"
+                    payload:
+                      type: object
+                      properties:
+                        email:
+                          type: "string"
+                          example: "xyz@gmail.com"
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        $ref: '#/components/schemas/action'
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: "Action creation failed"
+/actions/unpublished/delete:
+    post:
+      tags:
+        - actions
+      summary: delete action
+      requestBody:
+        description: This deletes an action from a task
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                taskId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                actionId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        $ref: '#/components/schemas/action'
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: "Action deletion failed"
+/actions/unpublished/edit:
+    post:
+      tags:
+        - actions
+      summary: edit action
+      requestBody:
+        description: This edits an action in a task
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                taskId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                actionId:
+                  type: string
+                  example: "64ab9a0e8ea41dae921c59b9"
+                actionPayload:
+                  type: object
+                  properties:
+                    payload:
+                     type: object
+                     properties:
+                       email:
+                        type: string
+                        example: "zzz@gmail.com"
+        required : true
+      responses:
+          400:
+            description: Insufficient request payload provided
+          200:
+           description: successful operation
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      result: 
+                        type: string
+                        example: "64ab9a0e8ea41dae921c59b9"
+          500:
+           description: Internal server error
+           content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  data:
+                    type: object
+                    example: {}
+                  error:
+                    type: string
+                    example: "Action updation failed"
+components:
+  schemas:
+    workflow:
+      type: object
+      properties:
+        _id:
+           type: string
+           description: workflow id
+           example: "64ab9a0e8ea41dae921c59b9"
+        name:
+           type: string
+           description: workflow name
+           example: "test workflow"
+        description:
+           type: string
+           description: workflow description
+           example: "test workflow"
+        is_active:
+           type: boolean
+           description: describes if workflow id deleted or not
+           example: true
+        is_published:
+           type: boolean
+           description: describes if workflow is published or not
+    tasks:
+      type: object
+      properties:
+        _id: 
+          type: string
+          description: task id
+          example: "64ab9a0e8ea41dae921c59b9"
+        name:
+          type: string
+          example: "task1"
+        isStart:
+           type: boolean
+           example: true
+        isEnd: 
+           type: boolean
+           example: false
+        actions: 
+           type: array
+           items:
+             {}
+        validations:
+           type: array
+           items: 
+              {}
+    action:
+      type: object
+      properties:
+        _id: 
+          type: string
+          description: task id
+          example: "64ab9a0e8ea41dae921c59b9"
+        type:
+          type: string
+          example: "email"
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              example: "xyz@gmail.com"
+        isActive:
+          type: boolean
+          example: true
