@@ -1,0 +1,16 @@
+{
+  "name": "bpmn_service",
+  "version": "1.0.0",
+  "description": "``` docker build . -t <name_to_image> ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+   "type": "module",
+  "dependencies": {
+    "camunda-external-task-client-js": "^3.0.0"
+  }
+}

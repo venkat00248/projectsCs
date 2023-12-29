@@ -1,0 +1,40 @@
+{
+    "mails": 
+        [
+            {
+              "ticketid": "TSK3243423",
+              "taskid": "TSK2034803_1",
+              "email": "test@cloud4c.com",
+              "subject": "Testing ",
+              "fullname": "Vyas",
+              "record_status": "1",
+              "content": "`++ ticket Thanks & Regards,`,",
+              "createdon": "2023-03-15 14:46:07",
+              "createdby": "karteek"
+            },
+            {
+                "ticketid": "TSK3243433",
+                "taskid": "TSK2034803_1",
+                "email": "test@cloud4c.com",
+                "subject": "Testing ",
+                "fullname": "Kiran",
+                "record_status": "1",
+                "content": "`++ ticket Thanks & Regards,`,",
+                "createdon": "2023-03-15 14:46:07",
+                "createdby": "karteek"
+              },
+              {
+                "ticketid": "TSK3243434",
+                "taskid": "TSK2034803_1",
+                "email": "test@cloud4c.com",
+                "subject": "Testing ",
+                "fullname": "Lyana",
+                "record_status": "1",
+                "content": "`++ ticket Thanks & Regards,`,",
+                "createdon": "2023-03-15 14:46:07",
+                "createdby": "karteek"
+              }
+          ]
+    
+  }
+  

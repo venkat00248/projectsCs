@@ -1,0 +1,113 @@
+.boxContainer {
+  height: 38px;
+  // border: 2.5px solid grey;
+  // padding: 0px 10px;
+  // border-radius: 50px;
+  width: 82%;
+  border-left: 2px solid grey;
+  .elementsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    .search {
+      border: none;
+      height: 100%;
+      width: 100%;
+      padding: 0px 10px;
+      border-radius: 50px;
+      font-size: 17px;
+      color: #424242;
+      &:focus {
+        outline: none;
+      }
+    }
+    .material-icons {
+      margin: auto;
+      color: black;
+    }
+  }
+  
+}
+.suggestions_wrapper {
+  margin-top: 5px;
+  .suggestions {
+    width: 50%;
+    padding: 5px;
+    display: flex;
+    .search_result {
+      margin-left: 8px;
+    }
+    .search_resultIcon {
+      margin-top: 5px;
+    }
+  }
+  .suggestions:hover {
+    color: white;
+    background: linear-gradient(to right, #7e7c80, #414042);
+  }
+}
+
+.search_container {
+  display: flex;
+  flex-direction: row;
+  border: 2.5px solid grey !important;
+  padding: 0px 10px !important;
+  border-radius: 50px !important;
+}
+.search_dropDown {
+  width: 18% !important;
+  // border-radius: 50px;
+  //  border-right :2px solid grey !important;
+}
+.search_container .form-select {
+  border: none !important;
+  &:focus {
+    border-color: none !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+}
+.recentSearchItem {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-top: 5px;
+  // overflow: hidden;
+  // white-space: nowrap;
+  // text-overflow: ellipsis;
+  // max-width: 120px;
+}
+.recentSearches {
+  display: flex;
+  margin-top: 5px;
+  flex-direction: row;
+  // margin-right: 20px;
+  padding: 4px 10px;
+  &:hover {
+    background: #b7b9b6;
+  }
+}
+.recentSearches_wrapper {
+  background: #fff;
+  // border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+  max-height: 300px;
+  cursor: default;
+  margin-top: 2px;
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+}
+.recentSearches_icon {
+  margin-top: 4px;
+}
+.cross_icon {
+  font-size: 26px;
+  margin-top: 4px;
+}
+.timer {
+  fill: #a5aaaf;
+}
+.search_Module_loader{
+  margin-top: 200px;
+}

@@ -1,0 +1,61 @@
+.add-icon i {
+    background-color: #d4edda;
+    font-size: 20px;
+    color:#155724;;
+    padding: 4px 6px;
+
+  }
+  .add-icon{
+    background: transparent;
+    border: none !important;
+    font-size: 28px;
+  }
+
+.remove-icon i {
+    
+  background-color: #f8d7da;
+    font-size: 20px;
+    color:#721c24;
+    padding:4px 6px;
+
+  }
+  .remove-icon{
+    border: none !important;
+    background: transparent;
+    font-size: 28px;
+  }
+.container-switch{
+display: inline-flex;
+column-gap: 35px;
+align-items: center;
+
+}
+.file-extensions{
+  height: 500px;
+  width: 1000px;
+  overflow: hidden !important ;
+}
+// .toggle-switch{
+// position: absolute; 
+// }
+.error-message{
+  height: 25px;
+}
+.error-message_file {
+  height: 25px;
+  width: 298px;
+  margin: 0px 35px;
+  padding: 5px;
+}
+.filetype_info {
+  font-size: 13px;
+  padding: 8px;
+}
+.errorMsg {
+  font-size: 12.6px;
+}
+
+.form-switch .form-check-input {
+  width: 40px;
+  height: 19px;
+}

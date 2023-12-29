@@ -1,0 +1,379 @@
+{
+    "count": 53,
+    "list": [
+        {
+            "typeid": 1,
+            "typetittle": "Incident",
+            "kayakotypeid": 15,
+            "record_status": "1",
+            "type_icon": "fas fa-exclamation-triangle"
+        },
+        {
+            "typeid": 2,
+            "typetittle": "Service Request",
+            "kayakotypeid": 17,
+            "record_status": "1",
+            "type_icon": "fas fa-clipboard-list"
+        },
+        {
+            "typeid": 3,
+            "typetittle": "Alert",
+            "kayakotypeid": 19,
+            "record_status": "1",
+            "type_icon": "fas fa-bell"
+        },
+        {
+            "typeid": 4,
+            "typetittle": "Others",
+            "kayakotypeid": 21,
+            "record_status": "1",
+            "type_icon": "fab fa-flickr"
+        },
+        {
+            "typeid": 5,
+            "typetittle": "Reboot Request",
+            "kayakotypeid": 25,
+            "record_status": "1",
+            "type_icon": "fas fa-hourglass-start"
+        },
+        {
+            "typeid": 6,
+            "typetittle": "New Implementation",
+            "kayakotypeid": 9,
+            "record_status": "1",
+            "type_icon": "fas fa-receipt"
+        },
+        {
+            "typeid": 7,
+            "typetittle": "Problem",
+            "kayakotypeid": 11,
+            "record_status": "1",
+            "type_icon": "fas fa-exclamation-circle"
+        },
+        {
+            "typeid": 8,
+            "typetittle": "Change Request",
+            "kayakotypeid": 7,
+            "record_status": "1",
+            "type_icon": "fas fa-exchange-alt"
+        },
+        {
+            "typeid": 12,
+            "typetittle": "Task",
+            "kayakotypeid": 2,
+            "record_status": "1",
+            "type_icon": "fas fa-tasks"
+        },
+        {
+            "typeid": 18,
+            "typetittle": "Security Request",
+            "kayakotypeid": 13,
+            "record_status": "1",
+            "type_icon": "fas fa-lock"
+        },
+        {
+            "typeid": 19,
+            "typetittle": "SOC-Incident",
+            "kayakotypeid": 38,
+            "record_status": "1",
+            "type_icon": "fas fa-shield-alt"
+        },
+        {
+            "typeid": 24,
+            "typetittle": "SOC-Alert",
+            "kayakotypeid": 49,
+            "record_status": "1",
+            "type_icon": "fas fa-user-lock"
+        },
+        {
+            "typeid": 39,
+            "typetittle": "SOPTSK",
+            "kayakotypeid": 66,
+            "record_status": "1",
+            "type_icon": "far fa-file-alt"
+        },
+        {
+            "typeid": 67,
+            "typetittle": "CMDBTSK",
+            "kayakotypeid": 68,
+            "record_status": "1",
+            "type_icon": "fas fa-database"
+        },
+        {
+            "typeid": 89,
+            "typetittle": "SAPEWA",
+            "kayakotypeid": 84,
+            "record_status": "1",
+            "type_icon": "fas fa-database"
+        },
+        {
+            "typeid": 111,
+            "typetittle": "SAPCWF",
+            "kayakotypeid": 95,
+            "record_status": "1",
+            "type_icon": "fas fa-database"
+        },
+        {
+            "typeid": 133,
+            "typetittle": "SAPRCA",
+            "kayakotypeid": 106,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 146,
+            "typetittle": "SAPCSM",
+            "kayakotypeid": 118,
+            "record_status": "1",
+            "type_icon": "fas fa-database"
+        },
+        {
+            "typeid": 166,
+            "typetittle": "De-escalation",
+            "kayakotypeid": 132,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 174,
+            "typetittle": "SIP",
+            "kayakotypeid": 42,
+            "record_status": "1",
+            "type_icon": "fas fa-tasks"
+        },
+        {
+            "typeid": 187,
+            "typetittle": "Solman-Alert",
+            "kayakotypeid": 142,
+            "record_status": "1",
+            "type_icon": "fas fa-bell"
+        },
+        {
+            "typeid": 201,
+            "typetittle": "RPA",
+            "kayakotypeid": 213,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 215,
+            "typetittle": "Missed Call",
+            "kayakotypeid": 269,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 226,
+            "typetittle": "SOC-Task",
+            "kayakotypeid": 262,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 236,
+            "typetittle": "Email_Ticketing",
+            "kayakotypeid": 290,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 246,
+            "typetittle": "SAPHCR",
+            "kayakotypeid": 304,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 260,
+            "typetittle": "Service Request - OTH",
+            "kayakotypeid": 321,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 267,
+            "typetittle": "EMS",
+            "kayakotypeid": 328,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 274,
+            "typetittle": "EMS - OTH",
+            "kayakotypeid": 335,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 288,
+            "typetittle": "Project",
+            "kayakotypeid": 313,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 302,
+            "typetittle": "ELK",
+            "kayakotypeid": 349,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 699,
+            "typetittle": "Test123",
+            "kayakotypeid": 678,
+            "record_status": "0",
+            "type_icon": ""
+        },
+        {
+            "typeid": 705,
+            "typetittle": "TestKalpana",
+            "kayakotypeid": 691,
+            "record_status": "0",
+            "type_icon": ""
+        },
+        {
+            "typeid": 715,
+            "typetittle": "AddOn Request",
+            "kayakotypeid": 701,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 722,
+            "typetittle": "CHG",
+            "kayakotypeid": 710,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 729,
+            "typetittle": "DTSHCR",
+            "kayakotypeid": 722,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 735,
+            "typetittle": "CCM",
+            "kayakotypeid": 730,
+            "record_status": "1",
+            "type_icon": "fas fa-exclamation-triangle"
+        },
+        {
+            "typeid": 739,
+            "typetittle": "G2G",
+            "kayakotypeid": 734,
+            "record_status": "1",
+            "type_icon": "fas fa-exclamation-triangle"
+        },
+        {
+            "typeid": 743,
+            "typetittle": "MCC",
+            "kayakotypeid": 738,
+            "record_status": "1",
+            "type_icon": "fas fa-exclamation-triangle"
+        },
+        {
+            "typeid": 745,
+            "typetittle": "SA",
+            "kayakotypeid": 742,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 747,
+            "typetittle": "ADD",
+            "kayakotypeid": 743,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 749,
+            "typetittle": "SDD",
+            "kayakotypeid": 745,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 751,
+            "typetittle": "VAS",
+            "kayakotypeid": 749,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 753,
+            "typetittle": "CDCSIP",
+            "kayakotypeid": 751,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 755,
+            "typetittle": "TI",
+            "kayakotypeid": 753,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 757,
+            "typetittle": "GI",
+            "kayakotypeid": 755,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 759,
+            "typetittle": "CYD",
+            "kayakotypeid": 757,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 761,
+            "typetittle": "SOCACC",
+            "kayakotypeid": 748,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 762,
+            "typetittle": "SSRA",
+            "kayakotypeid": 758,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 764,
+            "typetittle": "RF",
+            "kayakotypeid": 760,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 765,
+            "typetittle": "PartnerSupport",
+            "kayakotypeid": 761,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 767,
+            "typetittle": "PMT",
+            "kayakotypeid": 763,
+            "record_status": "1",
+            "type_icon": ""
+        },
+        {
+            "typeid": 769,
+            "typetittle": "MSHCR",
+            "kayakotypeid": 765,
+            "record_status": "1",
+            "type_icon": ""
+        }
+    ],
+    "code_error": "",
+    "pre_code_error": "",
+    "set_property": null
+}

@@ -1,0 +1,181 @@
+.header-tickets{
+    margin: 20px 36px 10px 33px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.breadcrumbs{
+  a{
+    text-decoration: none;
+    font-size: 18px;
+    cursor: default;
+  }
+}
+.header-buttons{
+    background-color: gray;
+    border-radius: 0px;
+    border-color: white;
+    color:white;
+    height:30px;
+    box-shadow: 3px 3px 5px lightgray;
+    cursor: pointer;
+}
+.tickets-dashboard{
+    
+    justify-content: flex-start;
+    height:110px;
+    width:100px;
+    margin: 4px 10px;
+    border-radius: 8px;
+    border: none;
+    color: black;
+}
+.header-views {
+    padding:4px;
+    margin-top: 10px;
+}
+
+.cards-view{
+    display: flex;
+    flex-direction: row; 
+    justify-content:flex-start;
+    flex-wrap: wrap;
+}
+/**/
+
+
+$color_purple: #5133AB;
+$color_red: #AC193D;
+$color_orange: #DC572E;
+$color_green: #00A600;
+$color_blue: #003fca;
+
+$base_font_size: 14px;
+$base_line_height: 1.5em;
+$text_font_family: 'Open Sans', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$display_font_family: 'Open Sans', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+
+body {
+	font-family: $text_font_family;
+	font-size: $base_font_size;
+	line-height: $base_line_height;
+	font-weight: 400;
+}
+
+p, span, a, ul, li, button {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+strong {
+	font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $display_font_family;
+	line-height: $base_line_height;
+	font-weight: 300 !important;	
+}
+
+strong {
+  font-weight: 400;
+}
+
+.tile {  
+  width: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+	background: #fff;		
+	padding: 20px;
+	margin-bottom: 10px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #fff;
+  background-size: cover !important;
+  .title {
+		margin-top: 0px;
+    font-size: 20px;
+	}
+  & a {text-decoration: none; color:lightgray}
+  & a:hover {color:#fff; text-decoration: underline;font-size: 18px;}
+  
+  &.purple, &.blue, &.red, &.orange, &.green {
+    color: #fff;
+  }
+  
+  &.purple {
+    background: $color_purple;
+
+		&:hover {
+			background: darken($color_purple, 10%);
+		}		
+  }
+  
+  &.red {
+    background: $color_red;
+
+		&:hover {
+			background: darken($color_red, 10%);
+		}		
+  }
+  
+  &.green {
+    background: $color_green;
+
+		&:hover {
+			background: darken($color_green, 10%);
+		}		
+  }
+  
+  &.blue {
+    background: $color_blue;
+
+		&:hover {
+			background: darken($color_blue, 10%);
+		}	
+  }
+  
+  &.orange {
+    background: $color_orange;
+
+		&:hover {
+			background: darken($color_orange, 10%);
+		}	
+  }
+}
+.task-select{
+  margin-left: 800px;
+}
+.dateAndLang{
+  display: flex;
+}
+.time{
+  margin-right: 5px;
+}
+.Error-service{
+  height: 50px;
+  
+}
+.dateAndLang .css-13cymwt-control {
+  height: 96%;
+}
+.languageSelect{
+  width: 106px;
+}
+.css-19kzrtu {
+  padding: 0px !important
+}
+
+.tile_wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.dashBoardTileWrapper{
+  width: 22%;
+}
+.chart_col{
+  margin: 28px;
+}

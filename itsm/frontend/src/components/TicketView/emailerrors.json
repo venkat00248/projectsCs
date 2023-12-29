@@ -1,0 +1,44 @@
+[
+  {
+    "id": "to",
+    "error": "To field is required"
+  },
+  {
+    "id": "cc",
+    "error": "CC field is required"
+  },
+  {
+    "id": "description",
+    "error": "Description field cannot be empty"
+  },
+  {
+    "id": "macrosvalue",
+    "error": "Macros field is required"
+  },
+  {
+    "allowed_ExtensionObj": {
+      "image/jpeg": [".jpg", ".jpeg"],
+      "text/csv": [".csv"],
+      "image/png": [".png"],
+      "image/gif": [".gif"],
+      "application/pdf": [".pdf"],
+      "application/msword": [".doc"],
+      "application/vnd.ms-excel": [".xls"],
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [
+        ".xlsx"
+      ],
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [
+        ".docx"
+      ]
+    }
+  },
+  {
+    "allowedExtensionObj": {
+      "application/vnd.ms-excel": [".xls"],
+      "text/csv": [".csv"],
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [
+        ".xlsx"
+      ]
+    }
+  }
+]

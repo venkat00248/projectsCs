@@ -1,0 +1,39 @@
+{
+    "Tabsdata": [
+        {
+            "id": 1,
+            "name": "Communication",
+            "text": "Communication",
+            "position": 1,
+            "isActive": "true"
+        },
+        {
+            "id": "2",
+            "name": "Resolution",
+            "text": "Resolution",
+            "position": "2",
+            "isActive": "true"
+        },
+        {
+            "id": 3,
+            "name": "Followup",
+            "text": "Follow up",
+            "position": "3",
+            "isActive": "true"
+        },
+        {
+            "id": 4,
+            "name": "Tasks",
+            "text": "Tasks",
+            "position": "4",
+            "isActive": "true"
+        },
+        {
+            "id": 5,
+            "name": "Worklog",
+            "text": "Work log",
+            "position": "5",
+            "isActive": "true"
+        }
+    ]
+}

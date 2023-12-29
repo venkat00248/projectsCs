@@ -1,0 +1,17 @@
+node_modules/
+api_gateway/node_modules/
+kafka_service/node_modules/
+kafka_service/dist
+ticket_service/node_modules/
+ticket_service/dist/
+file_server_service/node_modules/
+file_server_service/dist/
+notes.md
+docs/mysql_schema_copy/
+notification_service/node_modules/
+user_service/dist
+user_AuthService/dist
+notification_service/dist
+scheduler_service/dist
+logger_service/dist
+scheduler_service/node_modules

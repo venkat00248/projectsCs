@@ -1,0 +1,16 @@
+replicaCount: 2
+image: 10.10.121.29:8085/appmodernizationbackend-uat:01
+
+#imagePullSecrets: myregistrykey
+name: appmodernizationbackend
+labels: appmodernizationbackend
+
+
+service:
+  type: ClusterIP
+  port: 80
+
+targetPort: 3292
+#nodePort: 30008
+containerPort: 3292
+cpu: 100m

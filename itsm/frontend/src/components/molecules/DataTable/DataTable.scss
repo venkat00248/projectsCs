@@ -1,0 +1,88 @@
+.DataTable {
+  min-height: 92px;
+  border-radius: 2px;
+   background-color: #ccc;
+//   background-color: #42526e;
+//   background-color: var(--light-gray);
+//   box-shadow: 0 1px 0 0 #cfd7df;
+  box-shadow: 0 1px 0 0 red;
+  margin-bottom: 10px;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  .list-content-wrap {
+    padding-left: 19px;
+    .content1 {
+      margin: 5px;
+      .overDue {
+        background-color: #ffecf0;
+        color: #c82124;
+        border: 1px solid #ffd0d6;
+        padding: 0 4px 1px;
+        margin-right: 4px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+    }
+  }
+  .list-check-wrap {
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 14px;
+  }
+  .DataTable-col1 {
+    display: flex;
+    flex-direction: row;
+  }
+  .DataTable-col2 {
+    padding-right: 70px;
+  }
+  .profilepic__img {
+    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    vertical-align: middle;
+  }
+  .avatar-icon {
+    width: 44px;
+    height: 44px;
+    margin-top: 22px;
+  }
+
+  .medium{
+    border-radius: 2px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #4da1ff;
+    margin-right: 10px;
+   
+  }
+  .app-icon--small{
+    width: 19px;
+    margin-right: 5px;
+  }
+  select .select-dropdown-trigger__status-icon, .ticket-list-dropselect .ember-power-select-status-icon, .ticket-list-dropselect .select-dropdown-trigger__status-icon {
+    right: inherit;
+    margin-left: 7px;
+    top: 4px;
+}
+
+.table_dropDown{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+    border-style: inherit;
+    border-top: 1px solid #12344d;
+    border-right: 1px solid #12344d;
+    border-left: transparent;
+    transform: rotate(135deg);
+    margin-left: 10px;
+    margin-bottom: 4px;
+
+}
+}

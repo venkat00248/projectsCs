@@ -1,0 +1,56 @@
+{
+  "name": "TSK Workflow",
+  "steps": [
+    {
+      "id": 1,
+      "name": "Step 1: Open",
+      "description": "This is the first step in the workflow.",
+      "type": "task",
+      "next": [2]
+    },
+    {
+      "id": 2,
+      "name": "Step 2: InProgress",
+      "description": "This is the second step in the workflow.",
+      "type": "task",
+      "next": [3]
+    },
+    {
+      "id": 3,
+      "name": "Step 3",
+      "description": "This is the second step in the workflow.",
+      "type": "decision",
+      "options": [
+        {
+          "name": "Option 1",
+          "next": [4]
+        },
+        {
+          "name": "Option 2",
+          "next": [5]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Step 4",
+      "description": "This is the third step in the workflow.",
+      "type": "task",
+      "next": [6]
+    },
+    {
+      "id": 5,
+      "name": "Step 5",
+      "description": "This is the fourth step in the workflow.",
+      "type": "task",
+      "next": [6]
+    },
+    {
+      "id": 6,
+      "name": "Step 6",
+      "description": "This is the final step in the workflow.",
+      "type": "end"
+    }
+  ]
+}
+  

@@ -1,0 +1,38 @@
+.tabContainer .nav-link.active {
+    background-color: #eee !important;
+}
+.tile-green{
+    background: url(./../../../public//img/card1.jpg) no-repeat;
+    background-position: 100% 80%;
+}
+.tile-red{
+    background: url(./../../../public//img/card1.jpg) no-repeat;
+    background-position: 100% 80%;
+}
+.tile-grey{
+    background: url(./../../../public//img/card1.jpg) no-repeat;
+    background-position: 100% 80%;
+}
+.tile-yellow{
+    background: url(./../../../public//img/card1.jpg) no-repeat;
+    background-position: 100% 80%;
+}
+// .tile-box {
+//     box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+// }
+.totalCount{
+    color: black;
+}
+.tile {.badge{
+   margin-left: 3px;
+   color:  #6a6868 !important;
+   background: #fff !important;
+   position: relative;
+   top: -3px;
+   padding: 0.2rem 0.4rem 0.1rem 0.4rem;
+}
+}
+div#pieId {
+    border: 1px solid rgb(204 204 204) !important;
+    border-radius: 10px;
+}

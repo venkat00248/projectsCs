@@ -1,0 +1,19 @@
+{
+    "defaultENV": { "ENV": "NODE_ENV"},
+    "dev": {
+        "driver": "pg",   
+        "host": { "ENV": "localhost"},
+        "port": { "ENV": 5432},
+        "database": { "ENV": "app_moderization"},
+        "user": { "ENV": "postgres"},
+        "password": { "ENV": "SaiRam@123"}
+    }, 
+    "test": {
+        "driver": "pg",   
+        "host": { "ENV": "POSTGRES_HOST"},
+        "port": { "ENV": "POSTGRES_PORT"},
+        "database": { "ENV": "POSTGRES_DB_TEST"},
+        "user": { "ENV": "POSTGRES_USER"},
+        "password": { "ENV": "POSTGRES_PASSWORD"}
+    }
+}

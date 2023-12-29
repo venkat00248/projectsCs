@@ -1,0 +1,47 @@
+.decisionNode{
+     background-color: grey;
+    height: 100px;
+    width: 100px;
+    transform: rotate(45deg);
+    .decisionTop{
+        background-color: green;
+        left: -3px;
+        top:-9px;
+        width: 10px;
+        height: 10px;
+    }
+    .decisionLeft{
+        background-color: green;
+    top: 103px;
+    left: -9px;
+    width: 10px;
+    height: 10px;
+    }
+    .decisionRight{
+        background-color: green;
+        top: -3px;
+        right: -6px;
+        width: 10px;
+        height: 10px;
+
+    }
+    .decisionBottom{
+        background-color: green;
+        left: 101px;
+        width: 10px;
+        height: 10px;
+    }
+    .actionNode{
+        transform: rotate(315deg);
+        top: 24px;
+        left: 16px;
+        position: relative;
+    }
+    .text{
+        // color:gold;
+        text-align: inherit;
+    text-overflow: ellipsis;
+    width: 86px;
+    overflow: hidden;
+    }
+}

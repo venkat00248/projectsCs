@@ -1,0 +1,29 @@
+.priorityform{
+// padding: 0px 0px 0px 15px !important;
+display: block;
+margin-top: 20px;
+}
+.priority-header, .fileExe-header{
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: black;
+}
+.fw-bold {
+    font-weight: 500 !important;
+}
+.p-description{
+   display:flex;
+ justify-content:space-between !important;
+ position: relative;
+}
+.p-description .colorpic {
+    position: absolute;
+    right: 1px;
+    height: 37px;
+    z-index: 99;
+}
+.priorityList span.searchfilter-icon {
+    right: 22px !important;
+}
+input.inputField {
+    margin-bottom: 2px;
+}

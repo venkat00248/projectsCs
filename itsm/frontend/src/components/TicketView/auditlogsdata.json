@@ -1,0 +1,36 @@
+[
+    {
+        "fullname": "Madhav",
+        "remarks": "Ticket status changed from pending to Approval",
+        "createdon":"2023-04-04 18:14:39"
+    },
+    {
+        "fullname": "Admin",
+        "remarks": "New Reply through email",
+        "createdon":"2023-04-04 18:14:39"
+        
+    },
+    {
+        "fullname": "Kartheek",
+        "remarks": "Owner changed from Admin to Madhav",
+        "createdon":"2023-04-04 18:14:39"
+      
+    }
+    ,
+    {
+        "fullname": "Admin",
+        "remarks": "Owner changed from Madhav to Admin",
+        "createdon":"2023-04-04 18:14:39"
+    },
+    {
+        "fullname": "Admin",
+        "remarks": "Owner re-assigned",
+        "createdon":"2023-04-04 18:14:39"
+       
+    },
+    {
+        "fullname": "Admin",
+        "remarks": "Owner changed  the subject",
+        "createdon":"2023-04-04 18:14:39"
+    }
+]

@@ -1,0 +1,74 @@
+{
+  "ColourOptions": [
+    {
+      "value": "Task",
+      "label": "Task",
+      "color": "#00B8D9",
+      "isFixed": true,
+      "count": 2
+    },
+    {
+      "value": "Change request",
+      "label": "Change Request",
+      "color": "#0052CC",
+      "isFixed": false,
+      "count": 200
+    },
+    {
+      "value": "New Implementation",
+      "label": "New Implementation",
+      "color": "#5243AA",
+      "isFixed": false,
+      "count": 10
+    },
+    {
+      "value": "Security Request",
+      "label": "Security Request",
+      "color": "#FF5630",
+      "isFixed": true,
+      "count": 12
+    },
+    {
+      "value": "Incident Management",
+      "label": "Incident Management",
+      "color": "#FF8B00",
+      "isFixed": false,
+      "count": 21
+    },
+    {
+      "value": "Other Tickets",
+      "label": "Other Tickets",
+      "color": "#FFC400",
+      "isFixed": false,
+      "count": 22
+    },
+    {
+      "value": "SAP CWF",
+      "label": "SAP CWF",
+      "color": "#36B37E",
+      "isFixed": false,
+      "count": 42
+    },
+    {
+      "value": "ELK",
+      "label": "ELK",
+      "color": "#00875A",
+      "isFixed": false,
+      "count": 23
+    },
+    {
+      "value": "DE escalation",
+      "label": "DE escalation",
+      "color": "#253858",
+      "isFixed": false,
+      "count": 12
+    },
+    {
+      "value": "TI",
+      "label": "TI",
+      "color": "#666666",
+      "isFixed": false,
+      "count": 20
+    }
+  ]
+}

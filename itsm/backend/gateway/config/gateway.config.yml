@@ -1,0 +1,663 @@
+http:
+  hostname: "0.0.0.0"
+  port: 3289
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  api:
+    host: "*"
+    paths: "/ip"
+    # paths:
+    #   - '/v1/*'         # string or array of strings
+    #   - '/v2/*'
+    # methods: ["GET", "OPTIONS"]
+    methods: ["GET", "OPTIONS"]
+  department:
+    # methods: 'GET,POST,PUT'
+    methods: ["GET", "POST", "PUT"]
+    host: "*"
+    paths: "/getdepartmentwise*"
+
+  searchbyticket:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/searchbyticket*"
+  publishedWorkflow:
+    # methods: 'GET,POST,PUT'
+    methods: "GET,POST"
+    host: "*"
+    paths: "/workflow/published/*"
+  unpublishedWorkflow:
+    # methods: 'GET,POST,PUT'
+    methods: "GET,POST"
+    host: "*"
+    paths: "/workflow/unpublished/*"
+  mytickets:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/mytickets*"
+  closetickets:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/closetickets*"
+  openticketsbyDate:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/openticketsbyDate*"
+  createTicket:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/createTicket*"
+  getCustomerList:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/getCustomerList*"
+  allTickets:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/allTicketDetails*"
+  ticketsByStaffid:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/ticketsByStaffid*"
+  authorizeToken:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/authorizeToken*"
+  getpriorities:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/getpriorities*"
+  openTickets:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/openTickets*"
+  unAssignedTickets:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/unAssignedTickets*"
+  auditlogsbyid:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/auditlogs_by_id*"
+  upload:
+    # methods: 'GET,POST,PUT'
+    methods: "POST,PUT"
+    host: "*"
+    paths: "/upload"
+  restrictform:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/restrictform*"
+  getAllWorkflows:
+    # methods: 'GET,POST,PUT'
+    methods: "GET"
+    host: "*"
+    paths: "/getAllWorkflows*"
+  workFlowById:
+    methods: "GET"
+    host: "*"
+    paths: "/getWorkFlowByID"
+  postAWorkFlow:
+    methods: "POST"
+    host: "*"
+    paths: "/postAWorkFlow"
+serviceEndpoints:
+  #microservice by default
+  httpbin:
+    url: "https://httpbin.org"
+  #microservice
+  departmentService:
+    url: "https://itsmnbe.cloud4c.com"
+  #microservice
+  searchService:
+    url: "https://itsmnbe.cloud4c.com"
+  #microservice
+  myticketService:
+    url: "https://itsmnbe.cloud4c.com"
+  restrictFromService:
+    url: "https://itsmnbe.cloud4c.com"
+  workflowsService:
+    url: "https://itsmworkflow.cloud4c.com"
+  closeticketServise:
+    url: "https://itsmnbe.cloud4c.com"
+  #microservice
+  allTicketsService:
+    url: "https://itsmnbe.cloud4c.com"
+  #microservice
+  ticketsByStaffService:
+    url: "https://itsmnbe.cloud4c.com"
+  #microservice
+  authorizeTokenService:
+    url: "https://itsmnbe.cloud4c.com"
+  getCustomerListService:
+    url: "https://itsmnbe.cloud4c.com"
+  createTicketService:
+    url: "https://itsmnbe.cloud4c.com"
+  openticketsbyDateService:
+    url: "https://itsmnbe.cloud4c.com"
+  allTicketTypesService:
+    url: "https://itsmnbe.cloud4c.com"
+  getprioritiesService:
+    url: "https://itsmnbe.cloud4c.com"
+  auditlogsbyidService:
+    url: "https://itsmnbe.cloud4c.com"
+  uploadService:
+    url: "https://itsmnbe.cloud4c.com"
+  unAssignedTicketsService:
+    url: "https://itsmnbe.cloud4c.com"
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+  # - jwt
+pipelines:
+  default:
+    apiEndpoints:
+      - api
+    policies:
+      # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+      # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin
+              changeOrigin: true
+  bin:
+    apiEndpoints:
+      - api
+    policies:
+      #  - expression:
+      #   - action:
+      #       jscode: |
+      #         if (req.url.startsWith('/discussions')) {
+      #           const slug = req.url.substr('/discussions'.length);
+      #           req.url = '/d' + slug;
+      #         }
+      #  - key-auth: # this is intentionaly disabled to allow temporary access
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin
+              changeOrigin: true
+  department:
+    apiEndpoints:
+      - department
+    policies:
+      - cors:
+          - action:
+              origin: "*"
+              methods: "HEAD,PUT,PATCH,POST,DELETE"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: departmentService
+              changeOrigin: true
+  search:
+    apiEndpoints:
+      - searchbyticket
+    policies:
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       secretOrPublicKeyFile:
+      #       checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: searchService
+              changeOrigin: true
+  myticket:
+    apiEndpoints:
+      - mytickets
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: myticketService
+              changeOrigin: true
+  closeticket:
+    apiEndpoints:
+      - closetickets
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: closeticketServise
+              changeOrigin: true
+  allTickets:
+    apiEndpoints:
+      - allTickets
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+        # - jwt:
+        #   - action:
+        #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+        # secretOrPublicKeyFile:
+        # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: allTicketsService
+              changeOrigin: true
+  ticketsByStaffid:
+    apiEndpoints:
+      - ticketsByStaffid
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 1
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: ticketsByStaffService
+              changeOrigin: true
+
+  authorizeToken:
+    apiEndpoints:
+      - authorizeToken
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 1
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: authorizeTokenService
+              changeOrigin: true
+  getCustomerList:
+    apiEndpoints:
+      - getCustomerList
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 5
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: getCustomerListService
+              changeOrigin: true
+  createTicket:
+    apiEndpoints:
+      - createTicket
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: createTicketService
+              changeOrigin: true
+
+  openticketsbyDate:
+    apiEndpoints:
+      - openticketsbyDate
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: openticketsbyDateService
+              changeOrigin: true
+  openTickets:
+    apiEndpoints:
+      - openTickets
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 1
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: allTicketTypesService
+              changeOrigin: true
+  getpriorities:
+    apiEndpoints:
+      - getpriorities
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 1
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: getprioritiesService
+              changeOrigin: true
+  auditlogsbyid:
+    apiEndpoints:
+      - auditlogsbyid
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 5
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: auditlogsbyidService
+              changeOrigin: true
+  unAssignedTickets:
+    apiEndpoints:
+      - unAssignedTickets
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: unAssignedTicketsService
+              changeOrigin: true
+  upload:
+    apiEndpoints:
+      - upload
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "POST,PUT"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: uploadService
+              changeOrigin: true
+  restrictform:
+    apiEndpoints:
+      - restrictform
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 5
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: restrictFromService
+              changeOrigin: true
+  getAllWorkflows:
+    apiEndpoints:
+      - getAllWorkflows
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 5
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: workflowsService
+              changeOrigin: true
+  workFlowById:
+    apiEndpoints:
+      - workFlowById
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "GET"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 5
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: workflowsService
+              changeOrigin: true
+  postAWorkFlow:
+    apiEndpoints:
+      - postAWorkFlow
+    policies:
+      - cors:
+          - action:
+              # origin: 'http://localhost:3000'
+              origin: "*"
+              methods: "POST"
+              allowedHeaders: ["Content-Type", "Authorization"]
+      - rate-limit:
+          - action:
+              max: 50
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+      # secretOrPublicKeyFile:
+      # checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: workflowsService
+              changeOrigin: true
+  unpublishedWorkflow:
+    apiEndpoints:
+      - unpublishedWorkflow
+    policies:
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       secretOrPublicKeyFile:
+      #       checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: workflowsService
+              changeOrigin: true
+  publishedWorkflow:
+    apiEndpoints:
+      - publishedWorkflow
+    policies:
+      - rate-limit:
+          - action:
+              max: 10
+              windowMs: 1000
+      # - jwt:
+      #   - action:
+      #       secretOrPublicKeyFile:
+      #       checkCredentialExistence: false
+      - proxy:
+          - action:
+              serviceEndpoint: workflowsService
+              changeOrigin: true

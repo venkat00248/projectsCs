@@ -1,0 +1,39 @@
+.custom-modal .modal-content {
+    border-radius: 8px;
+    margin-top: 3rem;
+  }
+.headerModal {
+    padding: 10px !important;
+    padding: 11px 15px 8px 10px !important;
+}
+.footerModal {
+    padding: 2px;
+}
+.BodyModal {
+    font-size: 17px;
+    color: black;
+}
+.headerModal .modal-title {
+    font-weight: bold !important;
+    font-size: 17px !important;
+}
+.searchBarDarkTheme{
+    .modal-content{
+        background: #181a1b;
+    }
+    .BodyModal {
+        background: #181a1b;
+        color: #b1aaa0;
+        border: 1px solid #383d3f;
+       }
+       .headerModal .modal-title {
+        color: #b1aaa0;
+    }
+       .headerModal {
+        border-bottom: 1px solid #383d3f;
+        }
+        .custom-modal .modal-content {
+            background: #181a1b;
+            color: #b1aaa0;
+          }
+}

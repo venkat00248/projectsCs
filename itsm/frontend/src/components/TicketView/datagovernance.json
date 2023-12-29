@@ -1,0 +1,69 @@
+{
+    "Tabsdata":
+    [
+{
+    "id": 6,
+    "name": "Auditlogs",
+    "text": "Audit Logs",
+    "position": 1,
+    "isActive": "true"
+},
+{
+    "id": 7,
+    "name": "ClosureApprovallogs",
+    "text": "Closure Approval logs",
+    "position": "2",
+    "isActive": "true"
+  
+},
+{
+    "id": 8,
+    "name": "Followup",
+    "text": "Follow up",
+    "position": "3",
+    "isActive": "true"
+},
+{
+    "id": 9,
+    "name": "ActivityPocLogs",
+    "text": "Activity POC Logs",
+    "position": "4",
+    "isActive": "true"
+},
+{
+    "id": 10,
+    "name": "Ticketasks",
+    "text": "Ticket Tasks",
+    "position": "5",
+    "isActive": "true"
+},
+{
+    "id": 11,
+    "name": "StaffList",
+    "text": "Staff List",
+    "position": "5",
+    "isActive": "true"
+},
+{
+    "id": 12,
+    "name": "History",
+    "text": "History",
+    "position": "5",
+    "isActive": "true"
+},
+{
+    "id": 13,
+    "name": "SopLogs",
+    "text": "SOP Logs",
+    "position": "5",
+    "isActive": "true"
+},
+{
+    "id": 14,
+    "name": "Document",
+    "text": "Document",
+    "position": "5",
+    "isActive": "true"
+}
+    ]
+}

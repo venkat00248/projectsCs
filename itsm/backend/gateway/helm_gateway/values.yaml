@@ -1,0 +1,16 @@
+replicaCount: 2
+image: 10.10.121.29:8085/gateway-uat:01
+
+#imagePullSecrets: myregistrykey
+name: gateway
+labels: gateway
+
+
+service:
+  type: ClusterIP
+  port: 80
+
+targetPort: 3289
+#nodePort: 30008
+containerPort: 3289
+cpu: 100m

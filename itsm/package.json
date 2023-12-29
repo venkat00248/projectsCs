@@ -1,0 +1,31 @@
+{
+  "name": "itsm-workflow",
+  "version": "1.2.0",
+  "description": "Application for workfow service and products on top of workflow service",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://svn.cloud4c.com/myshift2.0/ui-myshift2.0.git"
+  },
+  "author": "Mahesh Chandra | Karteek Vemula",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "standard-version": "^9.5.0"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6"
+  }
+}

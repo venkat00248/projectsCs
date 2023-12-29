@@ -1,0 +1,151 @@
+[
+  {
+    "id": "tickettypeid",
+    "name": "tickettypeid",
+    "title": "Type",
+    "label": null,
+    "required": true,
+    "placeholder": "Select One..",
+    "type": "select",
+    "options": [],
+    "errorMessage": "Field type is required",
+    "tooltips": "Provide ticket type"
+  },
+  {
+    "id": "ticketId",
+    "title": "Ticket id",
+    "type": "text",
+    "tooltips": "Generated ticket Id"
+  },
+  {
+    "id": "priority",
+    "name": "priority",
+    "title": "Priority",
+    "placeholder": "Select One..",
+    "label": null,
+    "required": true,
+    "type": "select",
+    "options": [],
+    "errorMessage": "Field priority is required",
+    "tooltips": "P1 - 1 Hr | P2 - 8 Hrs | P3 - 24 Hrs"
+  },
+  {
+    "id": "customer_ticket_ref_id",
+    "name": "customer_ticket_ref_id",
+    "title": "Customer",
+    "placeholder": "Select One..",
+    "label": null,
+    "required": true,
+    "type": "select",
+    "options": [],
+    "errorMessage": "Field customer is required",
+    "tooltips": "Provide customer"
+  },
+  {
+    "id": "subject",
+    "name": "subject",
+    "title": "Subject",
+    "placeholder": "Enter Subject..",
+    "required": true,
+    "value": "",
+    "minLength": 10,
+    "width": "100%",
+    "maxLength": 100,
+    "type": "text",
+    "errorMessage": {
+      "001": "Field subject is required",
+      "002": "Length must be between 10 to 100 characters",
+      "003": "Special character are not allowed"
+    },
+    "tooltips": "Provide suitable subject"
+  },
+  {
+    "id": "serverInfo",
+    "name": "serverInfo",
+    "title": "Server Info",
+    "placeholder": "Select One..",
+    "label": null,
+    "required": true,
+    "type": "select",
+    "options": [
+      { "value": 1, "label": "Dummy", "title": "serverInfo" },
+      { "value": 2, "label": "Dummy1", "title": "serverInfo" },
+      { "value": 3, "label": "Dummy2", "title": "serverInfo" }
+    ],
+    "errorMessage": "Field server info. is required",
+    "tooltips": "Provide server info"
+  },
+  {
+    "id": "instance_type",
+    "name": "instance_type",
+    "title": "Instance Type",
+    "placeholder": "Select One..",
+    "value": "",
+    "required": true,
+    "type": "radio",
+    "radioOption": [
+      {
+        "title": "Production",
+        "field_value": "Production"
+      },
+      {
+        "title": "Non Production",
+        "field_value": "Non Production"
+      }
+    ],
+    "errorMessage": "Field instance type is required",
+    "tooltips": "Select instance type"
+  },
+  {
+    "id": "tickte_file",
+    "name": "customer_attachment_url",
+    "title": "Attach File",
+    "type": "file",
+    "errorMessage": {
+      "001": "Only allow (<=10) attachment",
+      "002": "Unsupported file: Please select valid file"
+    },
+    "tooltips": "File size <= 2mb",
+    "allowed_Extension": [
+      "jpg",
+      "jpeg",
+      "png",
+      "gif",
+      "pdf",
+      "doc",
+      "docx",
+      "xls",
+      "xlsx",
+      "csv"
+    ],
+    "allowed_ExtensionObj": {
+      "image/jpeg": [".jpg", ".jpeg"],
+      "text/csv": [".csv"],
+      "image/png": [".png"],
+      "image/gif": [".gif"],
+      "application/pdf": [".pdf"],
+      "application/msword": [".doc"],
+      "application/vnd.ms-excel": [".xls"],
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [
+        ".xlsx"
+      ],
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [
+        ".docx"
+      ]
+    },
+    "Max_Size": 2
+  },
+  {
+    "id": "description",
+    "name": "description",
+    "title": "Description",
+    "placeholder": "Leave a description here...",
+    "required": true,
+    "value": "",
+    "minLength": 10,
+    "maxLength": 300,
+    "type": "textarea",
+    "errorMessage": "Field description is required",
+    "tooltips": "Add description for ticket"
+  }
+]

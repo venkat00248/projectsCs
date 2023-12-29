@@ -1,0 +1,269 @@
+[
+  {
+    "id": "Type",
+    "name": "typetittle",
+    "title": "Type",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "Task",
+        "label": "Task",
+        "title": "Task"
+      },
+      {
+        "value": "SI",
+        "label": "SI",
+        "title": "SI"
+      },
+      {
+        "value": "SOA",
+        "label": "SOA",
+        "title": "SOA"
+      },
+      {
+        "value": "Alert",
+        "label": "Alert",
+        "title": "Alert"
+      },
+      {
+        "value": "Incident",
+        "label": "Incident",
+        "title": "Incident"
+      }
+    ],
+    "errorMessage": "Field type is required",
+    "tooltips": "ticket type"
+  },
+  {
+    "id": "Priority",
+    "name": "prioritytitle",
+    "title": "Priority",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "P1 Critical",
+        "label": "P1 Critical",
+        "title": "P1 Critical"
+      },
+      {
+        "value": "p2",
+        "label": "p2",
+        "title": "p2"
+      },
+      {
+        "value": "P3 Normal",
+        "label": "P3 Normal",
+        "title": "P3 Normal"
+      }
+    ],
+    "errorMessage": "Field priority is required",
+    "tooltips": "ticket priority"
+  },
+  {
+    "id": "Status",
+    "name": "statustitle",
+    "title": "Status",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "Activity",
+        "label": "Activity",
+        "title": "Activity"
+      },
+      {
+        "value": "Open",
+        "label": "Open",
+        "title": "Open"
+      },
+      {
+        "value": "POC",
+        "label": "POC",
+        "title": "POC"
+      },
+      {
+        "value": "POM",
+        "label": "POM",
+        "title": "POM"
+      },
+      {
+        "value": "Closed",
+        "label": "Closed",
+        "title": "Closed"
+      }
+    ],
+    "errorMessage": "Field Status is required",
+    "tooltips": "ticket status"
+  },
+  {
+    "id": "Group",
+    "name": "groupname",
+    "title": "Group",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "cloud4c",
+        "label": "cloud4c",
+        "title": "cloud4c"
+      },
+      {
+        "value": "C4C_RC_Exchange",
+        "label": "C4C_RC_Exchange",
+        "title": "C4C_RC_Exchange"
+      }
+    ],
+    "errorMessage": "Field Status is required",
+    "tooltips": "ticket status"
+  },
+  {
+    "id": "Sub Group",
+    "name": "Sub Group",
+    "title": "Sub Group",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "Automation",
+        "label": "Automation",
+        "title": "Automation"
+      },
+      {
+        "value": "Quality",
+        "label": "Quality",
+        "title": "Quality"
+      },
+      {
+        "value": "C4C_RC_PM",
+        "label": "C4C_RC_PM",
+        "title": "C4C_RC_PM"
+      }
+    ],
+    "errorMessage": "Field Status is required",
+    "tooltips": "ticket status"
+  },
+  {
+    "id": "Department",
+    "name": "dept_title",
+    "title": "Department",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "C4C_Support_HYD",
+        "label": "C4C_Support_HYD",
+        "title": "C4C_Support_HYD"
+      },
+      {
+        "value": "FI_Change_Request",
+        "label": "FI_Change_Request",
+        "title": "FI_Change_Request"
+      }
+    ],
+    "errorMessage": "Field Status is required",
+    "tooltips": "ticket status"
+  },
+  {
+    "id": "Owner",
+    "name": "Owner",
+    "title": "Owner",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "Kartheek",
+        "label": "Kartheek",
+        "title": "kartheek"
+      },
+      {
+        "value": "Mahesh",
+        "label": "Mahesh",
+        "title": "Mahesh"
+      },
+      {
+        "value": "Akash",
+        "label": "Akash",
+        "title": "Akash"
+      }
+    ],
+    "errorMessage": "Field Status is required",
+    "tooltips": "ticket status"
+  },
+  {
+    "id": "Wings",
+    "name": "wingname",
+    "title": "Wings",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "Operations",
+        "label": "Operations",
+        "title": "Operations"
+      },
+      {
+        "value": "Projects",
+        "label": "Projects",
+        "title": "Projects"
+      },
+      {
+        "value": "PPM",
+        "label": "PPM",
+        "title": "PPM"
+      },
+      {
+        "value": "Null",
+        "label": "Null",
+        "title": "Null"
+      }
+    ],
+    "errorMessage": "Field Status is required",
+    "tooltips": "ticket status"
+  },
+  {
+    "id": "Line Of Bussiness",
+    "name": "",
+    "title": "Line Of Bussiness",
+    "placeholder": "Select One..",
+    "label": "",
+    "required": true,
+    "type": "select",
+    "options": [
+      {
+        "value": "Azure",
+        "label": "Azure",
+        "title": "Azure"
+      },
+      {
+        "value": "AWS",
+        "label": "AWS",
+        "title": "AWS"
+      },
+      {
+        "value": "SAP",
+        "label": "SAP",
+        "title": "SAP"
+      }
+    ],
+    "errorMessage": "Field Status is required",
+    "tooltips": "ticket status"
+  }
+]

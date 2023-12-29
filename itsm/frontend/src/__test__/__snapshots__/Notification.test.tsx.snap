@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification component should render with given state from Redux store 1`] = `
+<div>
+  <section
+    className="section-10 pt-0"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="notification-ui_dd-content"
+        data-testid="notificationContainer"
+      >
+        <div
+          className="notification-list markas-not-read"
+          data-testid="notificationItem"
+        >
+          <div
+            className="notification-list_content d-flex"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="flex-shrink-0 me-3"
+            >
+              <div
+                className="avatar-xs"
+              >
+                <span
+                  className="avatar-title font-size-16 bg-K"
+                >
+                  <i
+                    className="fst-normal"
+                  >
+                    K
+                  </i>
+                </span>
+              </div>
+            </div>
+            <div
+              className="flex-grow-1"
+            >
+              <div
+                className="assigned text-secondary"
+              >
+                <i
+                  className="mdi mdi-ticket-confirmation-outline verticalicon"
+                />
+                <span
+                  className="mx-3 "
+                >
+                  Ticket Assigned
+                </span>
+                <span
+                  className="text-success border px-2 rounded dateandtime"
+                >
+                  24th May 2023 5:17 PM
+                </span>
+              </div>
+              <div
+                className="username"
+              >
+                <p
+                  className="fw-bold text-dark"
+                >
+                  <span>
+                    TSK101233792
+                  </span>
+                   - 
+                  <span>
+                    (
+                  </span>
+                  <span>
+                    Open
+                  </span>
+                  <span>
+                    )
+                  </span>
+                   assigned to
+                </p>
+                <span
+                  className="text-muted"
+                >
+                  Karteek Vemula
+                </span>
+                <p
+                  className="fw-bold text-muted"
+                >
+                  Cloud4c
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="d-flex align-items-center mbl-mark"
+          >
+            <span
+              className="markRead text-primary"
+              data-testid="markReadButton"
+              onClick={[Function]}
+            >
+              Mark as read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

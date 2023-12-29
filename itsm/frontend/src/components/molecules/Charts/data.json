@@ -1,0 +1,193 @@
+{
+  "series": [
+    {
+      "value": 1,
+      "name": "Sun",
+      "isFixed": true,
+      "count":34
+    },
+    {
+      "value": 2,
+      "name": "Mon",
+      "isFixed": true,
+      "count":33
+    },
+    {
+      "value": 3,
+      "name": "Tue",
+      "isFixed": true,
+      "count":39
+    },
+    {
+      "value": 4,
+      "name": "Wed",
+      "isFixed": true,
+      "count":47
+    },
+    {
+      "value": 5,
+      "name": "Thu",
+      "isFixed": true,
+      "count":88
+    },
+    {
+      "value": 6,
+      "name": "Fri",
+      "isFixed": true,
+      "count":95
+    },
+      {
+        "value": 7,
+        "name": "Sat",
+        "isFixed": true,
+        "count":34
+    }
+  ],
+  "series2": [
+      {
+        "value": 11,
+        "name": "Sun",
+        "isFixed": true,
+        "count":34
+      },
+      {
+        "value": 2333,
+        "name": "Mon",
+        "isFixed": true,
+        "count":33
+      },
+      {
+        "value": 3333,
+        "name": "Tue",
+        "isFixed": true,
+        "count":39
+      },
+      {
+        "value": 433,
+        "name": "Wed",
+        "isFixed": true,
+        "count":47
+      },
+      {
+        "value": 5333,
+        "name": "Thu",
+        "isFixed": true,
+        "count":88
+      },
+      {
+        "value": 633,
+        "name": "Fri",
+        "isFixed": true,
+        "count":95
+      },
+      {
+        "value": 7333,
+        "name": "Sat",
+        "isFixed": true,
+        "count":34
+      }
+  ],
+  "series3": [
+    {
+      "value": 211,
+      "name": "Sun",
+      "isFixed": true,
+      "count":34
+    },
+    {
+      "value": 223,
+      "name": "Mon",
+      "isFixed": true,
+      "count":33
+    },
+    {
+      "value": 333,
+      "name": "Tue",
+      "isFixed": true,
+      "count":39
+    },
+    {
+      "value": 433,
+      "name": "Wed",
+      "isFixed": true,
+      "count":47
+    },
+    {
+      "value":3003,
+      "name": "Thu",
+      "isFixed": true,
+      "count":88
+    },
+    {
+      "value": 6303,
+      "name": "Fri",
+      "isFixed": true,
+      "count":95
+    },
+      {
+          "value": 7,
+          "name": "Sat",
+          "isFixed": true,
+          "count":34
+        
+    }
+
+
+  ],
+  "xaxis": [
+    {
+      "value": 11,
+      "name": "Sun",
+      "isFixed": true,
+      "count":34
+    },
+    {
+      "value": 23,
+      "name": "Mon",
+      "isFixed": true,
+      "count":33
+    },
+    {
+      "value": 33,
+      "name": "Tue",
+      "isFixed": true,
+      "count":39
+    },
+    {
+      "value": 43,
+      "name": "Wed",
+      "isFixed": true,
+      "count":47
+    },
+    {
+      "value": 533,
+      "name": "Thu",
+      "isFixed": true,
+      "count":88
+    },
+    {
+      "value": 633,
+      "name": "Fri",
+      "isFixed": true,
+      "count":95
+    },
+      {
+          "value": 7,
+          "name": "Sat",
+          "isFixed": true,
+          "count":34
+        
+    }
+
+
+  ],
+  "pieSeries":[
+    { "value": "5", "name": "Mon" },
+    { "value": "20", "name":"Tue" },
+    { "value": "36", "name": "Wed" },
+    { "value": "10", "name": "Thu" },
+    { "value": "10", "name": "Fri" },
+    { "value": "20", "name": "'Sat" },
+    { "value": "15", "name": "Sun" }
+  ]
+}

@@ -1,0 +1,16 @@
+replicaCount: 2
+image: 10.10.121.29:8085/kafka-uat:01
+
+#imagePullSecrets: myregistrykey
+name: kafka
+labels: kafka
+
+
+service:
+  type: ClusterIP
+  port: 80
+
+targetPort: 8080
+#nodePort: 30008
+containerPort: 8080
+cpu: 100m

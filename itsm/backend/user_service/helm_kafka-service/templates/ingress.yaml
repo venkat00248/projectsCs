@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx-three
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/affinity-mode: persistent
+    #nginx.ingress.kubernetes.io/enable-cors: "true"
+    
+
+
+#    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  name: ingress-resource-kafka
+spec:
+  tls:
+  - hosts:
+    - itsmkafka.cloud4c.com
+    secretName: my-tls-key
+  rules:
+  - host: itsmkafka.cloud4c.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kafka-service
+            port:
+              number: 80

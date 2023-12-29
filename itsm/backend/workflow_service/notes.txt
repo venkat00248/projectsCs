@@ -1,0 +1,34 @@
+1.Curl request for attaching workflow which can be used in Postman
+curl --location 'http://localhost:8080/workflow/attach-workflow' \
+--header 'Content-Type: application/json' \
+--data '{
+    "ticketId":"1",
+    "workflowId": 1
+}'
+
+2.Curl request for getting next step
+
+curl --location 'http://localhost:8080/workflow/next-step/?ticketId=1&workflowId=1'
+
+3.Curl request for getting previous task
+
+curl --location 'http://localhost:8080/workflow/prev-step?ticketId=1&workflowId=1'
+
+4.Curl request for updating the task
+
+curl --location 'http://localhost:8080/workflow/update-task' \
+--header 'Content-Type: application/json' \
+--data '{
+    "workflowId":"1",
+    "ticketId":"1",
+    "task": {
+            "id": 1,
+            "name": "Step 1: Open",
+            "description": "This is the first step in the workflow.",
+            "type": "task",
+            "next": [
+                2
+            ],
+            "startTime": "2023-06-16T08:35:48.436Z"
+        }
+}'

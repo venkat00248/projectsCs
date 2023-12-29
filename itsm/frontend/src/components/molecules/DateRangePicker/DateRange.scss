@@ -1,0 +1,75 @@
+.custom-filters {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-right: 3px;
+  .filter-buttons {
+    padding: 8px 19px;
+    font-size: 17px;
+    // margin-right: 3px;
+    background: none;
+    outline: none;
+    border-right: 1px solid var(--border-color);
+  }
+  .rs-picker-toggle.rs-btn.rs-btn-default.rs-btn-md {
+    border: none;
+  }
+  .rs-picker-toggle.rs-picker-toggle-active.rs-btn.rs-btn-default.rs-btn-md {
+    box-shadow: none !important;
+  }
+  .filter-button-wrapper {
+    // border-right: 1px solid var(--border-color);
+  }
+  .rs-stack-item {
+    margin-top: 4px;
+  }
+  .clicked {
+    background-color: #d7d2d5 !important;
+  }
+  .clicked:not(:active) {
+    background-color: transparent;
+  }
+  .rs-picker-default .rs-picker-toggle {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    color: #575757;
+    border: 1px solid #e5e5ea;
+  }
+
+  /* ok button style */
+  
+
+  /* range style */
+  .rs-picker-menu .rs-calendar .rs-calendar-table-cell-content {
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 21px;
+    display: inline-block;
+  }
+  svg.rs-icon {
+    margin-top: 5px;
+  }
+}
+
+
+
+// daterangdarktheme styles
+ 
+// .rs-picker-daterange-panel { background-color: #181a1b; border: 1px solid #5a5d5e;}
+// .rs-picker-daterange-header {
+//   border-bottom: 1px solid #5a5d5e;
+//   background: #303436;
+//   color: #8d8b8f !important;
+// }
+// .rs-picker-toolbar {
+//   background-color: #181a1b;
+//   border-top: 1px solid #5a5d5e;
+// }
+// .rs-picker-menu .rs-calendar .rs-calendar-table-cell:hover .rs-calendar-table-cell-content {
+//   color: #fff !important;
+// }
+ 

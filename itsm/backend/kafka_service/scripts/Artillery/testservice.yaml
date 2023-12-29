@@ -1,0 +1,31 @@
+config:
+  # processor: "./helper.js"
+  target: "https://itsmkafka.cloud4c.com/kafka/"
+  http:
+    timeout: 15
+  phases:
+    - duration: 3600
+      arrivalRate: 50 
+      name: warm up
+    # - duration: 60
+    #   arrivalRate: 50
+    #   name: Ramp up load
+    # - duration: 120
+    #   arrivalRate: 100
+    #   name: Sustained Load
+
+scenarios:
+  - name: "publish message in kafka"
+    flow:
+      - post:
+          url: "/produce"
+          # beforeRequest: "currentTime"
+          json:
+            message: 
+              data: "hello cloud4c solutions"
+            partition: 1
+            topic: "myshifttickets2"
+
+
+# arrivalRate - requests per second
+# duration - duration in seconds to run the script/artillery

@@ -1,0 +1,21 @@
+replicaCount: 2
+image: 10.10.121.29:8085/workflow-uat:01
+
+#imagePullSecrets: myregistrykey
+name: workflow
+labels: workflow
+
+
+service:
+  type: ClusterIP
+  port: 80
+
+targetPort: 8080
+#nodePort: 30008
+containerPort: 8080
+cpu: 100m
+persistence:
+  enabled: true
+  volume:
+    mountPath: /nfs
+    name: workflow-pvc

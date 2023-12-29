@@ -1,0 +1,52 @@
+.cmn-styles{
+display: flex;
+flex-direction: row;
+margin-bottom: 20px;
+font-size: 12px;
+font-weight: bold;
+row-gap: 500px !important;
+height:20px;
+justify-content: space-evenly;
+width: 100%;
+background-color:lightgrey;
+}
+
+.email-buttons{
+  display: flex;
+  justify-content: flex-end;
+  gap:5px;
+  margin:10px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  
+}
+.custom-accordion {
+  font-size: 12px; 
+  padding: 0px;
+
+ 
+}
+.communication-tab{
+  border:1px solid black;
+}
+
+  .cmn-card{
+    background-color: lightgray;
+    height: 30px;
+  }
+ .accordion{
+  --bs-accordion-btn-icon-width: 12px !important;
+ }
+ .Accordion-header{
+  height: 20px;
+
+ }
+//  #file-upload-email{
+//   border: 1px dashed black !important;
+//   padding: 2px;
+//   margin: 3px;
+//   cursor: pointer;
+//  }
+.custom-accordion-restrict .accordion-item .accordion-header .accordion-button {
+  padding: 0px 20px 0px 20px;
+}

@@ -1,0 +1,114 @@
+
+.ticketViewColumnOne .ticketViewColumnTwo{
+  display: flex;
+  flex-direction: column;
+}
+.ticketViewWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 25px;
+  gap: 2px;
+}
+
+.ticketViewRows {
+  display: flex;
+  margin-bottom: 12px;
+
+  // justify-content: space-between;
+}
+.label{
+  width:130px;
+}
+
+.values{
+  display: flex;
+  flex-direction: row;
+}
+
+.value{
+  display: flex;
+  flex-direction: row;
+
+}
+.colon{
+  margin-right:15px;
+}
+.Accordion-header{
+  font-size: 14px;
+  font-weight: bold;
+  
+}
+.Tabs-communication{
+  margin-top: 20px;
+}
+.Audit-logs {
+  display: flex;
+  margin:20px;
+  flex-direction: row;
+  justify-content:flex-start;
+  gap: 2px;
+ 
+}
+.Audit-logs :last-child{
+margin-left: 150px;
+}
+.Edit-buttons{
+ float: right;
+  
+}
+.detailed{
+  font-size: 12px;
+  margin: 50px;
+}
+.spacing-subject{
+  white-space: pre-wrap !important;
+
+}
+.spacing-value
+{
+  width: 300px;
+  white-space: pre-wrap !important;
+ word-wrap: break-word  !important;
+}
+.detailedButton{
+  margin-top: 25px;
+}
+
+// css for ticket count popover //
+.countPopOver {
+  text-decoration: underline rgb(9, 224, 206);
+  cursor: pointer;
+}
+$badge-padding: 5px;
+$badge-color: white;
+$badge-border-radius: 5px;
+%badge{
+  padding: $badge-padding;
+  color: $badge-color  ;
+  border-radius:  $badge-border-radius;
+}
+.bg-green {
+  background-color: var(--ap-green);
+  @extend %badge
+}
+.bg-normal{
+  background-color: var(--ap-grey);
+  @extend %badge
+}
+.stepperContainer .Mui-disabled .MuiStepLabel-label {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+.stepperContainer .css-1hv8oq8-MuiStepLabel-label.Mui-completed {
+  color: #000 !important;
+}
+.stepperContainer.tableview .Mui-disabled .MuiStepLabel-label {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.stepperContainer.tableview .Mui-completed .MuiStepLabel-label {
+color: #fff !important;
+}
+.stepperContainer.tableview .css-1hv8oq8-MuiStepLabel-label.Mui-active {
+color: #8f19d2 !important;
+}

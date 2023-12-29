@@ -1,0 +1,28 @@
+.url {
+    margin: 10px !important;
+    background-color: #fff !important;
+}
+.urlbtn {
+    position: absolute;
+    left: 11px;
+    top: 11px;
+    padding: 0.6rem 0.5rem 0.5rem 0.5rem;
+    z-index: 1;
+    color: #1976d2;
+}
+.selectmethod {
+    position: absolute !important;
+    right: 2px;
+    top: 2px;
+    z-index: 2;
+}
+
+.MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-gutters  {
+    font-size: 0.900rem;
+}
+.MuiInputBase-formControl.MuiInputBase-sizeSmall {
+    font-size: 0.900rem;
+    background: #fff;
+}
+
+ 

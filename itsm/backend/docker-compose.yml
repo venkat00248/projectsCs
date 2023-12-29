@@ -1,0 +1,253 @@
+version: '1'
+services:
+  mongo:
+      image: mongo:6
+      container_name: mongo-server
+      ports:
+        - 27017:27017
+      volumes:
+      # docker volume create --name=mongodata
+        # - D:\data:dock
+        - C:\data:/data/db
+      networks:
+        - some-net
+
+  api_gateway:
+    build: ./api_gateway2/
+    ports:
+      - "8080:8080"
+    environment:
+      port: "8080"
+      HOST_EMAIL_SERVICE: 192.168.64.1
+      HOST_TICKET_SERVICE: 192.168.64.1
+    volumes:
+      - ./api_gateway2:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - some-net
+
+  email_service:
+    build: ./email_service
+    container_name: email_service
+    # command: npm start
+    volumes:
+      # - basevolume:/
+      - ./email_service/:/usr/src/app
+      # - /usr/src/app/node_modules
+    # restart: on-failure
+    ports:
+      - "8082:8082"
+    # network_mode: "host"
+    environment:
+      port: "8082"
+      DB_URI: mongodb://mongo-server:27017/dataex
+    networks:
+      - some-net
+    # links: 
+      # - mongo
+    # depends_on:
+      # - mongo
+
+  ticket_service:
+    build: ./ticket_service
+    container_name: ticket_service
+    # command: npm start
+    volumes:
+      # - basevolume:/
+      - ./ticket_service:/usr/src/app
+      - /usr/src/app/node_modules
+    # restart: on-failure
+    ports:
+      - "8081:8081"
+    # network_mode: "host"
+    environment:
+      port: "8081"
+      DB_URI: mongodb://mongo-server:27017/itsm_raw
+    # links: 
+      # - mongo
+    # depends_on:
+      # - mongo
+    networks:
+      - some-net
+  
+  kafka_service:
+    build: ./kafka_service
+    container_name: kafka_service
+    # command: npm start
+    volumes:
+      # - basevolume:/
+       - ./kafka_service:/usr/src/app
+       - /usr/src/app/node_modules
+    # restart: on-failure
+    ports:
+      - "8081:8081"
+    # network_mode: "host"
+    environment:
+      PORT: "8081"
+      DB_URI: mongodb://mongo-server:27017/itsm_raw
+    # links: 
+      # - mongo
+    depends_on:
+      - mongo
+      - broker
+    networks:
+      - some-net
+    
+  workflow_service:
+    build: ./workflow_service
+    container_name: workflow_service
+    # command: npm start
+    volumes:
+      # - basevolume:/
+      - ./workflow_service:/usr/src/app
+      - /usr/src/app/node_modules
+    # restart: on-failure
+    ports:
+      - "8084:8084"
+    # network_mode: "host"
+    environment:
+      PORT: "8084"
+      DB_URI: mongodb://mongo-server:27017/itsm_raw
+    # links: 
+      # - mongo
+    # depends_on:
+      # - mongo
+    networks:
+      - some-net
+
+  logger_service:
+    build: ./logger_service
+    container_name: logger_service
+    # command: npm start
+    volumes:
+      # - basevolume:/
+      - ./logger_service:/usr/src/app
+      - /usr/src/app/node_modules
+    # restart: on-failure
+    ports:
+      - "8084:8084"
+    # network_mode: "host"
+    environment:
+      PORT: "8084"
+      DB_URI: mongodb://mongo-server:27017/itsm_raw
+    # links: 
+      # - mongo
+    depends_on:
+      - mongo
+      - broker
+    networks:
+      - some-net
+
+  notification_service:
+    build: ./notification_service
+    container_name: notification_service
+    # command: npm start
+    volumes:
+      # - basevolume:/
+       - ./notification_service:/usr/src/app
+       - /usr/src/app/node_modules
+    # restart: on-failure
+    ports:
+      - "8083:8083"
+    # network_mode: "host"
+    environment:
+      PORT: "8083"
+      DB_URI: mongodb://mongo-server:27017/service
+    depends_on:
+      - mongo
+      - broker
+    # links: 
+      # - mongo
+    networks:
+      - some-net 
+
+  scheduler_service:
+    build: ./scheduler_service
+    container_name: scheduler_service
+    # command: npm start
+    # volumes:
+      # - basevolume:/
+      # - ./_service:/usr/src/app
+      # - /usr/src/app/node_modules
+    # restart: on-failure
+    ports:
+      - "8085:8085"
+    # network_mode: "host"
+    environment:
+      PORT: "8085"
+      DB_URI: mongodb://mongo-server:27017/service
+    depends_on:
+      - mongo
+      - cache
+    # links: 
+      # - mongo
+    networks:
+      - some-net 
+ 
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - some-net
+
+  broker:
+    image: confluentinc/cp-kafka:7.3.2
+    container_name: broker
+    ports:
+    # To learn about configuring Kafka for access across networks see
+    # https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    networks:
+      - some-net
+
+  cache:
+    image: redis:6.2-alpine
+    container_name: redis
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning
+    volumes: 
+      - cache:/data
+    networks:
+      - some-net
+  # python_server:
+  #   build: python-ocr-server/
+  #   volumes:
+  #     - ./python-ocr-server:/usr/src/app
+  #     - ./public:/usr/src/public
+  #   ports:
+  #     - "8000:8000"
+  #   networks:
+  #     - some-net
+networks:
+  some-net:
+    driver: bridge
+    # restart: on-failure
+      # network_mode: "host"
+  #   links: 
+  #     - database
+  # database:
+  #   image: mongo
+volumes:
+  mongodata:
+    external: true
+  basevolume:
+    external: true
+  cache:
+    driver: local

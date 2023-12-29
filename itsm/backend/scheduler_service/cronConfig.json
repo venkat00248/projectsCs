@@ -1,0 +1,9 @@
+{
+    "cron": [
+        {
+            "id": 1,
+            "name": "migration",
+            "scheduler": "* * * * *"
+        }
+    ]
+}

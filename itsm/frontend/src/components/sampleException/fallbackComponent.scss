@@ -1,0 +1,45 @@
+/* fallbackComponent.scss */
+// @import url('path/to/your/background-image.jpg');
+
+.fallbackContainer {
+  position: relative;
+  width: 65%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.ErrorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 451px;
+}
+
+.fallbackbutton {
+    // z-index: 3;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+
+.fallbackIcon {
+    font-size: 90px;
+}
+.fallbackIcon .fa-solid, .fas {
+    border-radius: 8px;
+    padding: 10px;
+}
